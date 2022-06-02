@@ -5,7 +5,7 @@ This source code is an Spring Boot web application (mvc + thymeleaf).
  
 Tested with
 * Java 8 or Java 11
-* Spring Boot 2.2.4.RELEASE
+* Spring Boot
 * Maven
 
 
