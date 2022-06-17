@@ -1,22 +1,7 @@
-FROM maven:3.3-jdk-8
-
+FROM maven:3.3-jdk-8  as builder
 VOLUME /tmp
-
 WORKDIR /code
-
-# Prepare by downloading dependencies
-
-ADD pom.xml /code/pom.xml  
-
-
-# Adding source, compile and package into a fat jar
-ADD src /code/src
+COPY . /code/
 RUN ["mvn", "clean", "install"]
-
-RUN ["ls", "/code/target"]
-RUN ["pwd"]
-RUN ["ls", "-ltrh", "/code/target/myspringboot.jar"]
-
-EXPOSE 8080
-
+EXPOSE 8084
 ENTRYPOINT [ "java", "-jar", "/code/target/myspringboot.jar" ]
