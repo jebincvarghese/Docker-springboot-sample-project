@@ -1,6 +1,6 @@
 FROM maven:3.3-jdk-8
 
-VOLUME /tmp
+VOLUME /tmp test
 
 WORKDIR /code
 
